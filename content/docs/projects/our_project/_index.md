@@ -1,13 +1,21 @@
 ---
-title: Our project name
+title: Curtain Breaks
 type: docs
 ---
 
-# The project name
+# Curtain Breaks
+
+## Pins on the Arduino
+
+LED 7-segment Display
+5V Power
+GND Pin
+A4
+A5
 
 ## Abstract
 
-A short and concise description of your project. 
+A short and concise description of your project.
 
 ## Introduction
 
@@ -17,11 +25,11 @@ If a section grows too large or handles a very specific part of the project it c
 
 {{< figure src="get_in.jpg" caption="*A drawing by David Shrigley.*">}}
 
-## Related work 
+## Related work
 
 References to related concepts, projects, books, websites, stories, systems, fruits, etc. and their relation to the project at hand.
 
-## Implementation 
+## Implementation
 
 A detailed description of your prototyping process.
 
