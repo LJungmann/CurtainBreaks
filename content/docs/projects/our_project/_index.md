@@ -12,6 +12,16 @@ LED 7-segment Display
 GND Pin
 A4
 A5
+Address to use in Code is 0x71
+
+- 0x70 by default and +1 for A0 jumper
+- documentation states that A1 would be +2 and A2 would be +4
+- which means 0x70 until 0x77 are available addresses, but we have 0x71 since there's a jumper on A0
+
+Rotary Thing
+5V Power
+GND Pin
+A0
 
 ## Abstract
 
