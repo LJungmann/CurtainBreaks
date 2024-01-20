@@ -17,8 +17,9 @@ Project documentation for the Design for **Physical Prototyping** course 2023/24
 
 Curtain Breaks is helping people take breaks from sitting too long at a time. By rolling down a curtain after a certain time, the laptop screen is hidden. The user then needs to leave the space in front of the laptop for at least one minute for the curtain to roll back up again.
 
-## Introduction
+## <a id="Introduction"></a>Introduction
 
+--> TODO: add pictures of final prototype.
 People usually spend too much time sitting down at the desk. They take too little breaks to stand up, walk a few steps and get a fresh mind. The Chindogu Curtain Breaks helps people take these breaks.
 {{< figure src="assets/CurtainBreaks1.png" caption="*Sketch of the originally planned Curtain Breaks.*">}}
 When the user sits down, they can set a time on a LED Display using a rotary button (originally an "up" and "down" button) that will determine how many minutes they can remain sitting. The maximum that they can stay seated is 60 minutes. The LED Display is mounted on the top of the laptop screen along with the buttons. Next to the LED Display, there is a proximity sensor that senses if the user is sitting in front of the screen.
@@ -83,19 +84,24 @@ The paper discusses the use of proximity sensors, which aligns with our project'
 
 ## Implementation
 
-A detailed description of your prototyping process.
+_A detailed description of your prototyping process._ <- TODO: remove
+In the beginning we did some brainstorming and after bringing all of our ideas together, we first thought we could make sth that shoots pencils at the user when they don't take a break or an apparatus that starts to shake the laptop, so you cannot type anything anymore. But we thought we would maybe break something if we shake the laptop too hard and that the pencils could hurt. So we came up with a more peaceful way of encouraging the user to take a break: Curtains. These were our first sketches:
+{{< figure src="assets/CurtainBreaks1.png" caption="*Sketch of the originally planned Curtain Breaks.*">}}
+{{< figure src="assets/Curtainbreaks2.png" caption="*Curtain Breaks from the front showing the LED Display, the buttons, the proximity sensor and the curtain mounted on top.*">}}
+{{< figure src="assets/CurtainBreaks3.png" caption="*Curtain Breaks from the back still showing an originally planned battery and on/off button.*">}}
+{{< figure src="assets/CurtainBreaks4.png" caption="*Curtain Breaks from the side.*">}}
+{{< figure src="assets/CurtainBreaks5.png" caption="*Sketch of the curtain being rolled down in front of the laptop.*">}}
 
-The base on top of the screen is made out of wood. It’s a lightweight material, that can be crafted quite easily. To place the controls on it, we have cut out holes.
+We were planning to make the base on top of the screen out of wood, since it's rather lightweight when thin and can be crafted quite easily. For placing the controls we planned to cut out holes.
 
-The timer has a LED display that can show 4 numbers. The first 2 digits are for the minutes and the other 2 are for the seconds. The user can set the timer in minutes up to a maximum of 60 minutes.
+_We also planned the following:_ The timer has a LED display that can show 4 numbers. The first 2 digits are for the minutes and the other 2 are for the seconds. The user can set the timer in minutes up to a maximum of 60 minutes using an up and down button.
 
-On top of the laptop, there is a rotatable bar that has a textile stripped to it. Combining that with a stepper motor, we are able to pull the textile down and bakc up again in front of the screen. A proximity sensor senses if the user is still in front of his computer. For the proximity sensor to work, the curtain has a hole cut out.
+On top of the laptop, there is a rotatable bar that has a textile stripped to it. Combining that with a stepper motor, we are able to pull the textile down and back up again in front of the screen. A proximity sensor senses if the user is still in front of his computer. For the proximity sensor to work, the curtain has a hole cut out.
 
-All the sensors are connected to an Arduino Uno Board, which is plugged into the laptop and runs a program to control the sensors. A detail description can be found [here]({{< ref "SetupAndCode#Setup" >}}).
-
+All the sensors are connected to an Arduino Uno Board, which is connected to a battery supply and runs a program to control the sensors.
 The program itself initially waits for inputs on the timer. When the timer is set, it counts down until it reaches zero. At that point, the stepper motor is is triggered to roll down the curtain. Then the proximity sensor consistently scans if the user is still sitting there. When the user is away for at least a minute, the curtain will roll up again and the program waits for another timer input.
 
-TODO: describe the end setup more.
+We did not really have an entire iteration where we had to redo our whole prototype but we had some milestones where we realized we needed to change something in our plan.
 
 ### Iteration №1 - ProVotyping
 
@@ -117,7 +123,7 @@ In our final ProVotype the UltraSonic Sensor and the LED with the two buttons ar
 
 Since we had the same idea of how things would work out and look like, it was fairly easy to build our ProVotype. Building this and acting the scene out of what our Chindōgu would be used for was fun and helped us visualize our idea.
 
-### Iteration №2
+### Iteration №2 - Programming, Construction and realizations
 
 While programming the sensors, we found out that it would be easier to use a rotary button instead of two buttons. It would have probably worked, but this was a better solution.
 
@@ -135,8 +141,10 @@ We assembled all of the parts together and then realized that for stability reas
 {{< figure src="assets/Assembling.jpg" caption="*Assembling the wood for the first time*">}}
 {{< figure src="assets/AssemblingStability.jpg" caption="*Adding a top bar for stability*">}}
 
-When planning how we would solder the cables to our board, we needed to redo our plan several times because we realized that the pins would TODO stick out differently and that we all had different ideas of how to solder it. But we also figured that out and we each had and input on what we could improve.
+**Soldering**: When planning how we would solder the cables to our board, we needed to redo our plan several times because we realized that the pins would stick out differently and that we all had different ideas of how to solder it. But we also figured that out and we each had and input on what we could improve.
 {{< figure src="assets/SolderingPlanning.jpg" caption="*Soldering Planning*">}}
+
+TODO: describe soldering and our mistakes about soldering more. / crimping part.
 
 The lightest bit of fabric we had was a tiny bit see-through but due to the patterns of the fabric it was still sufficient enough to not in an way still see enough through the fabric to keep working.
 {{< figure src="assets/Curtain.jpg" caption="*Curtain*">}}
@@ -145,12 +153,23 @@ This wasn't really a whole iteration or things that completely failed but things
 
 ### Iteration №3
 
+TODO: describe the end setup more.
+
 We mounted the sensors to the wood.
 {{< figure src="assets/SensorsToWood.png" caption="*Mounting the sensors*">}}
 
 {{< figure src="assets/WoodenConstruction.jpg" caption="*Wooden Construction for Laptop*">}}
-This worked!
+
+Our final setup looked like this:
+TODO: add photos. <- or we could also just put them in the Introduction instead of the sketches and reference that section here.
+TODO: add video of our working prototype?
+
+A detail description of our code can be found [here]({{< ref "SetupAndCode#Setup" >}}).
 
 ## Conclusion
 
-A reflection on your prototyping process and the project outcome. What happens to the prototype after the project?
+_TODO: further conclusions + answer question: A reflection on your prototyping process and the project outcome. What happens to the prototype after the project?_
+
+Making the prototype was a fun time with a few challenges. We really enjoyed it and it was great to have such a hands-on introduction to electronics.
+We learned a lot about soldering and maybe we should have planned the final soldering more together again and not seperate the work, because then we would have probably realized our mistake sooner.
+The prototype will be kept by Leo.
