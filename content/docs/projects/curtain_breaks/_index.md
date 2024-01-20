@@ -83,19 +83,19 @@ The paper discusses the use of proximity sensors, which aligns with our project'
 
 ## Implementation
 
-A detailed description of your prototyping process.
+A detailed description of our prototyping process.
 
-The base on top of the screen is made out of wood. It’s a lightweight material, that can be crafted quite easily. To place the controls on it, we have cut out holes.
+The base on top of the screen is made out of wood. It’s a lightweight material, that can be crafted quite easily. To place the controls on it, we have cut out holes. To cut out the holes, we were able to use the CNC milling machine of Leo's father, which came in quite handy.
 
-The timer has a LED display that can show 4 numbers. The first 2 digits are for the minutes and the other 2 are for the seconds. The user can set the timer in minutes up to a maximum of 60 minutes.
+The timer is a LED display that can show 4 numbers. The first 2 digits are for the minutes and the other 2 are for the seconds. The user can set the timer in minutes up to a maximum of 60 minutes. The LED Display was exactly cut out, so it holds just by fitting tight into the hole.
 
-On top of the laptop, there is a rotatable bar that has a textile stripped to it. Combining that with a stepper motor, we are able to pull the textile down and bakc up again in front of the screen. A proximity sensor senses if the user is still in front of his computer. For the proximity sensor to work, the curtain has a hole cut out.
+On top of the laptop, there is a rotatable bar that has a textile stripped to it. Combining that with a stepper motor, we are able to pull the textile down and back up again in front of the screen.
+
+A proximity sensor senses if the user is still in front of his computer. For the proximity sensor to work, the curtain has a hole cut out.
 
 All the sensors are connected to an Arduino Uno Board, which is plugged into the laptop and runs a program to control the sensors. A detail description can be found [here]({{< ref "SetupAndCode#Setup" >}}).
 
-The program itself initially waits for inputs on the timer. When the timer is set, it counts down until it reaches zero. At that point, the stepper motor is is triggered to roll down the curtain. Then the proximity sensor consistently scans if the user is still sitting there. When the user is away for at least a minute, the curtain will roll up again and the program waits for another timer input.
-
-TODO: describe the end setup more.
+The program itself initially waits for inputs on the timer. When the timer is set, it counts down until it reaches zero. At that point, the stepper motor is triggered to roll down the curtain. Then the proximity sensor consistently scans if the user is still sitting there. When the user is away for at least a minute, the curtain will roll up again and the program waits for another timer input.
 
 ### Iteration №1 - ProVotyping
 
@@ -135,7 +135,7 @@ We assembled all of the parts together and then realized that for stability reas
 {{< figure src="assets/Assembling.jpg" caption="*Assembling the wood for the first time*">}}
 {{< figure src="assets/AssemblingStability.jpg" caption="*Adding a top bar for stability*">}}
 
-When planning how we would solder the cables to our board, we needed to redo our plan several times because we realized that the pins would TODO stick out differently and that we all had different ideas of how to solder it. But we also figured that out and we each had and input on what we could improve.
+When planning how we would solder the cables to our board, we needed to redo our plan several times because we realized that the pins would TODO stick out differently and that we all had different ideas of how to solder it. But we also figured that out and each of us had an input on what we could improve.
 {{< figure src="assets/SolderingPlanning.jpg" caption="*Soldering Planning*">}}
 
 The lightest bit of fabric we had was a tiny bit see-through but due to the patterns of the fabric it was still sufficient enough to not in an way still see enough through the fabric to keep working.
@@ -150,6 +150,28 @@ We mounted the sensors to the wood.
 
 {{< figure src="assets/WoodenConstruction.jpg" caption="*Wooden Construction for Laptop*">}}
 This worked!
+
+Leo's father helped us with some tips on how the stability of the wooden framework would be the best, as he is a hobby carpenter. So we implemented his ideas in the process, which were:
+
+- We need that bar on the top for stability reasons (although the prototype gets heavier)
+- How to screw the parts, by drilling small holes first (because glueing was not enough)
+- How to use the CNC milling machine
+- Crimping the cables instead of soldering them can be as good and is easier to do
+
+We thank him very much for helping us with that.
+
+After assembling all that, we only needed to connect to add the stepper motor and the bar with the curtain.
+The stepper motor and the bar are connected on one side by shrinking tubes. On the other side, there is a ball bearing, so the bar can move smoothly. Connecting the stepper motor with a shrinking tube to the bar seemed to be working really good in the first place. However, minutes before the final presentation, we encountered problems with the motor stopping midst rolling down the curtain. We figured out, that this can be due to 1 of 3 problems:
+
+1. The motor itself has problems, which we can only fix by replacing the motor
+2. The connection with the shrinking tubes is not tight enough (which means the motor just turns inside the tube, without moving the bar)
+3. Since the motor is not screwed or glued into its hole, it moves a bit when turning, due to that, it has loosen up the connection via the shrinking tube.
+
+For the presentation, we just heated up the tubes again with a lighter and it worked. So we think it's a mix of problem 2 and 3. Looking back on that, it would have been better to use another method of connecting the motor and the bar. But, for a prototype it was good enough.
+
+{{< figure src="assets/Prototype_Final_presentation.jpeg" caption="*Prototype on the presentation day*">}}
+
+This was our final prototype, that we used on the presentation day.
 
 ## Conclusion
 
