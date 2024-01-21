@@ -84,7 +84,7 @@ The paper discusses the use of proximity sensors, which aligns with our project'
 
 ## Implementation
 
-_A detailed description of your prototyping process._ <- TODO: remove
+_A detailed description of your prototyping process._ <- TODO: remove Instruction
 In the beginning we did some brainstorming and after bringing all of our ideas together, we first thought we could make sth that shoots pencils at the user when they don't take a break or an apparatus that starts to shake the laptop, so you cannot type anything anymore. But we thought we would maybe break something if we shake the laptop too hard and that the pencils could hurt. So we came up with a more peaceful way of encouraging the user to take a break: Curtains. These were our first sketches:
 {{< figure src="assets/CurtainBreaks1.png" caption="*Sketch of the originally planned Curtain Breaks.*">}}
 {{< figure src="assets/Curtainbreaks2.png" caption="*Curtain Breaks from the front showing the LED Display, the buttons, the proximity sensor and the curtain mounted on top.*">}}
@@ -107,19 +107,19 @@ We did not really have an entire iteration where we had to redo our whole protot
 
 In our ProVotyping session we figured out out, that we do not need a battery as originally planned and therefore also no power button. Instead we planned to mount the Arduino Uni Board on the back of the wooden construction and plug it in to the USB-Port of the laptop to provide power.
 Furthermore at first we planned the parts mounted onto the laptop to have two sides.
-{{< figure src="assets/PrototypeAbove.jpg" caption="*ProVotype from above*">}}
+{{< figure src="assets/PrototypeAbove.jpg" caption="*ProVotype from above*" width="75%">}}
 
 But we figured out that for stability reasons it would be smarter to connect them.
-{{< figure src="assets/PrototypeBackview.jpg" caption="*ProVotype from behind*">}}
+{{< figure src="assets/PrototypeBackview.jpg" caption="*ProVotype from behind*" width="75%">}}
 
 The two rolls on a stick on the side of the ProVotype symbolize where the roll with the curtain will be and where the curtain will be rolled up and down.
-{{< figure src="assets/PrototypeRollCurtainDown.jpg" caption="*ProVotype - Roll Curtain Down*">}}
-{{< figure src="assets/PrototypeRollCurtainUp.jpg" caption="*ProVotype - Roll Curtain Up*">}}
+{{< figure src="assets/PrototypeRollCurtainDown.jpg" caption="*ProVotype - Roll Curtain Down*" width="75%">}}
+{{< figure src="assets/PrototypeRollCurtainUp.jpg" caption="*ProVotype - Roll Curtain Up*" width="75%">}}
 
 The ProVotype doesn't represent this accurately but from the beginning on we were planning to make the curtain the whole width of the laptop and cut out a part for the ultrasonic sensor.
 
 In our final ProVotype the UltraSonic Sensor and the LED with the two buttons are also visible.
-{{< figure src="assets/Prototype_FinalPrototype.jpg" caption="*Final ProVotype*">}}
+{{< figure src="assets/Prototype_FinalPrototype.jpg" caption="*Final ProVotype*" width="75%">}}
 
 Since we had the same idea of how things would work out and look like, it was fairly easy to build our ProVotype. Building this and acting the scene out of what our Chindōgu would be used for was fun and helped us visualize our idea.
 
@@ -128,24 +128,33 @@ Since we had the same idea of how things would work out and look like, it was fa
 While programming the sensors, we found out that it would be easier to use a rotary button instead of two buttons. It would have probably worked, but this was a better solution.
 
 We had troubles to initially connect all of the sensors together so that the code would work for all of them, but we figured it out after a view tries. We also realized that it would after all be better to place the ultrasonic sensor fairly in the middle and not tilted on the side as we originally planned it in the ProVotype and our original sketches.
-{{< figure src="assets/ProgrammingSensors.jpg" caption="*Programming the sensors*">}}
+{{< figure src="assets/ProgrammingSensors.jpg" caption="*Programming the sensors*" width="75%">}}
 
 We sketched out our wooden construction in Fusion. During that, we realized that we hadn't yet thought about how we would bring the cables to the back. So we redid the sketch to contain holes in the top part (lowest part in both of the sketches) to bring the cables back inside of the wooden construction and bring them back out at the back part to connect them to the Arduino Uno Board.
 {{< figure src="assets/FusionSketch.png" caption="*Sketch of the Wooden Construction in Fusion*">}}
 {{< figure src="assets/FusionSketch_Back.png" caption="*Sketch of the Wooden Construction in Fusion from the Back*">}}
 
 When cutting the wood the fusion sketch needed to be changed a bit since the wood was thicker than originally planned and it was easier to change the measurements in the fusion file than cut the already somewhat thin wood thinner.
-{{< figure src="assets/CuttingWood.jpg" caption="*Cutting the wood*">}}
+{{< figure src="assets/CuttingWood.jpg" caption="*Cutting the wood*" width="75%">}}
 
 We assembled all of the parts together and then realized that for stability reasons another part on top that held the higher side parts together would be useful.
-{{< figure src="assets/Assembling.jpg" caption="*Assembling the wood for the first time*">}}
+{{< figure src="assets/Assembling.jpg" caption="*Assembling the wood for the first time*" width="75%">}}
 {{< figure src="assets/AssemblingStability.jpg" caption="*Adding a top bar for stability*">}}
 
 **Soldering**: When planning how we would solder the cables to our board, we needed to redo our plan several times because we realized that the pins would stick out differently and that we all had different ideas of how to solder it. But we also figured that out and we each had and input on what we could improve.
 {{< figure src="assets/SolderingPlanning.jpg" caption="*Soldering Planning*">}}
+Three weeks later after the christmas holidays we soldered. Two of us soldered and one of us was crimping the cables together. In the beginning we discussed which pins we should take and due to a miscommunication we took the wrong ones until we realized that the crimped and connected to the pins sensor wires wouldn't fit together with the board.
 
-TODO: describe soldering and our mistakes about soldering more. / crimping part.
+{{< figure src="assets/wrongPins.jpg" caption="*Having used the wrong pins*" width="50%">}}
 
+We didn't managae to unsolder it so we created blobs to coonnect the pins on the back of the board.
+{{< figure src="assets/pinsBlobs.jpg" caption="*Adding blobs to connect to correct pins*" width="50%">}}
+{{< figure src="assets/pinsBlobsTop.jpg" caption="*The top of the board with the correct pins*" width="50%">}}
+
+In the end we managed to set everything up correctly, though our miscommunication caused a mess on the board.
+{{< figure src="assets/boardWithWires.jpg" caption="*The final board with the connected sensors*" width="50%">}}
+
+**The Curtain:**
 The lightest bit of fabric we had was a tiny bit see-through but due to the patterns of the fabric it was still sufficient enough to not in an way still see enough through the fabric to keep working.
 {{< figure src="assets/Curtain.jpg" caption="*Curtain*">}}
 
@@ -168,8 +177,7 @@ A detail description of our code can be found [here]({{< ref "SetupAndCode#Setup
 
 ## Conclusion
 
-_TODO: further conclusions + answer question: A reflection on your prototyping process and the project outcome. What happens to the prototype after the project?_
-
 Making the prototype was a fun time with a few challenges. We really enjoyed it and it was great to have such a hands-on introduction to electronics.
-We learned a lot about soldering and maybe we should have planned the final soldering more together again and not seperate the work, because then we would have probably realized our mistake sooner.
+We learned a lot about soldering and maybe we should have planned the final soldering more together again and not seperate the work, because then we would have probably realized our mistake with the pins sooner.
+We were glad to get more time until January because there were also quite some other things to do in November and December.
 The prototype will be kept by Leo.
