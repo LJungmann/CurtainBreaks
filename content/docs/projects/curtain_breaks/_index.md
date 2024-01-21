@@ -32,6 +32,10 @@ When the user is not standing up after the set time, the proximity sensor will s
 
 The curtain will only roll back up if the user is gone at least one minute. This is again sensed by the proximity sensor.
 
+Here's a video of the final prototype, demonstrating how CurtainBreaks works:
+
+{{< video src="assets/Final.mp4"  autoplay="true" loop="true" muted="true">}}
+
 **How does the user interact with the device and what action does it perform?**
 
 As described above, the user interacts with the device via two buttons for setting the minutes and by simply sitting in front of it. The latter will be sensed by the proximity sensor. When the user does not go away after the set time has passed, the device will react to it.
@@ -190,6 +194,7 @@ For the presentation, we just heated up the tubes again with a lighter and it wo
 {{< figure src="assets/Prototype_Final_presentation.jpeg" caption="*Prototype on the presentation day*">}}
 
 This was our final prototype, that we used on the presentation day.
+Despite all the challenges, the prototype reflected our initial ideas, and we were excited to share Curtain Breaks with the public!
 
 ## Conclusion
 
