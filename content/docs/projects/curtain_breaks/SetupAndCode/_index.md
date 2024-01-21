@@ -34,14 +34,14 @@ We can use these values to show them as minutes on the LED display in 5 minute s
 
 ### Stepper Motor
 
-| Sensor | Pin | Wire Color |
-| :----- | --: | ---------- |
-| IN1    |   8 | blue       |
-| IN2    |   9 | green      |
-| IN3    |  10 | yellow     |
-| IN4    |  11 | orange     |
-| Power  |  5V | white      |
-| GND    | GND | black      |
+| What  | Pin | Wire Color |
+| :---- | --: | ---------- |
+| IN1   |   8 | blue       |
+| IN2   |   9 | green      |
+| IN3   |  10 | yellow     |
+| IN4   |  11 | orange     |
+| Power |  5V | white      |
+| GND   | GND | black      |
 
 The stepper motor is turned in one direction when the curtain should be moved down (timer is up).
 However, the maximum steps per revolution are 2049, which were not enough to get the curtain fully down.
@@ -50,20 +50,19 @@ This is hard coded and is repeated in the other direction, for turning the curta
 
 ### Ultrasonic Sensor
 
-| What    | Pin | Color  |
-| :------ | --: | ------ |
-| trigPin |  12 | orange |
-| echoPin |  13 | red    |
-| Ground  | GND | brown  |
-| Power   |  5V | yellow |
+| What    | Pin | Wire Color |
+| :------ | --: | ---------- |
+| trigPin |  12 | orange     |
+| echoPin |  13 | red        |
+| Ground  | GND | brown      |
+| Power   |  5V | yellow     |
 
 The ultrasonic sensor has a set variable userDistance, that the user has to be away on average for some set time (15 seconds for the presentation, but can be set longer in code, when in actual use).
 The average is important, because the values we get from the sensor are not 100% trustworthy.
 
-# Code
+## Code
 
 ```c++
-
 #include "HT16K33.h"
 #include <Stepper.h>
 
@@ -86,20 +85,19 @@ long timeOnTimerStart = 0;
 // defines pins numbers
 const int trigPin = 12; // Ultrasonic Sensor
 const int echoPin = 13; // Ultrasonic Sensor
-// defines params
+// defines params for US
 const float alpha = 0.8;
 const int userDistance = 200;
 int sensorValAvg = 1;
 int lastSensorValAvg = 1;
 int currSensorVal;
 long startTime,stopTime;
-long milliSecsGoneTime = 15000;
-long duration;
+// long milliSecsGoneTime = 15000; // for demonstration the user only had to be gone for 15 seconds.
+long milliSecsGoneTime = 60000; // user needs to be away for 1 min before the curtain rolls back up.
 int distance;
 
 // Stepper Motor params
-const int stepsPerRevolution = 2049;  // change this to fit the number of steps per revolution
-// for your motor
+const int stepsPerRevolution = 2049;  // already set to maximum
 // initialize the stepper library on pins 8 through 11:
 Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
 
@@ -107,7 +105,6 @@ void setup()
 {
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
-  // set the speed at 60 rpm:
   myStepper.setSpeed(16);
 
   Serial.begin(9600);
@@ -135,6 +132,7 @@ void loop()
       if(m == 0 && s == 0){
         // roll curtain down
         Serial.println("---curtain down---");
+        // needs to be called that offen bc of maximum stepsPerRevolution
         myStepper.step(stepsPerRevolution);
         myStepper.step(stepsPerRevolution);
         myStepper.step(stepsPerRevolution);
@@ -186,11 +184,8 @@ void loop()
     if(sensorValAvg > userDistance && lastSensorValAvg > userDistance) {
       Serial.println("multiple > 200 in a row.");
       stopTime = millis();
-      Serial.print("stop time:");
-      Serial.println(stopTime);
-      // roll curtain down since the user is away a long enough time
       if(stopTime - startTime >= milliSecsGoneTime) {
-        // step one revolution  in one direction:
+        // step multiple revolutions back up:
         Serial.println("-- curtain up --");
         myStepper.step(-stepsPerRevolution);
         myStepper.step(-stepsPerRevolution);
@@ -262,5 +257,4 @@ void getPotentioAndSetTimer(uint32_t now){
   }
 }
 
-// -- END OF FILE --
 ```
