@@ -34,7 +34,7 @@ The curtain will only roll back up if the user is gone at least one minute. This
 
 Here's a video of the final prototype, demonstrating how CurtainBreaks works:
 
-{{< video src="assets/Final.mp4"  autoplay="true" loop="true" muted="true">}}
+<video autoplay="true" loop="true" muted="true"> <source src="assets/Final.mp4" type="video/mp4"></video>
 
 **How does the user interact with the device and what action does it perform?**
 
@@ -191,7 +191,7 @@ The stepper motor and the bar are connected on one side by shrinking tubes. On t
 
 For the presentation, we just heated up the tubes again with a lighter and it worked. So we think it's a mix of problem 2 and 3. Looking back on that, it would have been better to use another method of connecting the motor and the bar. But, for a prototype it was good enough.
 
-{{< figure src="assets/Prototype_Final_presentation.jpeg" caption="*Prototype on the presentation day*">}}
+{{< figure src="assets/Prototype_Final_Presentation.jpeg" caption="*Prototype on the presentation day*">}}
 
 This was our final prototype, that we used on the presentation day.
 Despite all the challenges, the prototype reflected our initial ideas, and we were excited to share Curtain Breaks with the public!
