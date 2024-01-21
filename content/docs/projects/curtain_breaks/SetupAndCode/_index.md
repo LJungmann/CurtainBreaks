@@ -16,8 +16,6 @@ weight: 10
 | ?      |    A4 |            |
 | ?      |    A5 |            |
 
-<!-- TODO -->
-
 Address to use in Code is 0x71
 
 - 0x70 by default and +1 for A0 jumper

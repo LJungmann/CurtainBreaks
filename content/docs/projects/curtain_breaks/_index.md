@@ -19,7 +19,6 @@ Curtain Breaks is helping people take breaks from sitting too long at a time. By
 
 ## <a id="Introduction"></a>Introduction
 
---> TODO: add pictures of final prototype.
 People usually spend too much time sitting down at the desk. They take too little breaks to stand up, walk a few steps and get a fresh mind. The Chindogu Curtain Breaks helps people take these breaks.
 {{< figure src="assets/CurtainBreaks1.png" caption="*Sketch of the originally planned Curtain Breaks.*">}}
 When the user sits down, they can set a time on a LED Display using a rotary button (originally an "up" and "down" button) that will determine how many minutes they can remain sitting. The maximum that they can stay seated is 60 minutes. The LED Display is mounted on the top of the laptop screen along with the buttons. Next to the LED Display, there is a proximity sensor that senses if the user is sitting in front of the screen.
@@ -84,7 +83,6 @@ The paper discusses the use of proximity sensors, which aligns with our project'
 
 ## Implementation
 
-_A detailed description of your prototyping process._ <- TODO: remove Instruction
 In the beginning we did some brainstorming and after bringing all of our ideas together, we first thought we could make sth that shoots pencils at the user when they don't take a break or an apparatus that starts to shake the laptop, so you cannot type anything anymore. But we thought we would maybe break something if we shake the laptop too hard and that the pencils could hurt. So we came up with a more peaceful way of encouraging the user to take a break: Curtains. These were our first sketches:
 {{< figure src="assets/CurtainBreaks1.png" caption="*Sketch of the originally planned Curtain Breaks.*">}}
 {{< figure src="assets/Curtainbreaks2.png" caption="*Curtain Breaks from the front showing the LED Display, the buttons, the proximity sensor and the curtain mounted on top.*">}}
@@ -162,16 +160,12 @@ This wasn't really a whole iteration or things that completely failed but things
 
 ### Iteration №3
 
-TODO: describe the end setup more.
-
 We mounted the sensors to the wood.
 {{< figure src="assets/SensorsToWood.png" caption="*Mounting the sensors*">}}
 
 {{< figure src="assets/WoodenConstruction.jpg" caption="*Wooden Construction for Laptop*">}}
 
 Our final setup looked like this:
-TODO: add photos. <- or we could also just put them in the Introduction instead of the sketches and reference that section here.
-TODO: add video of our working prototype?
 
 A detail description of our code can be found [here]({{< ref "SetupAndCode#Setup" >}}).
 
